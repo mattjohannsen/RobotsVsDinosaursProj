@@ -8,6 +8,21 @@ namespace Robots_vs_Dinosaurs
 {
     class Herd
     {
+        // member variables
+
+
+
+        // constructor
+
+
+
+        // member methods
+        void GetDinosaurs()
+        {
+            Console.WriteLine("These are the dinosaurs:");
+        }
+
+
 
     }
 }

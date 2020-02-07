@@ -17,18 +17,16 @@ namespace Robots_vs_Dinosaurs
         //constructor SPAWNER
         public Dinosaur(string dinoType, int dinoHealth, int dinoEnergy, int dinoAttackPower)
         {
-            Dinosaur Tyrannosaurus = new Dinosaur("Tyrannosaurus", 10, 10, 10);
+            Dinosaur tyrannosaurus = new Dinosaur("Tyrannosaurus", 10, 10, 10);
+            Dinosaur stegasaurus = new Dinosaur("Stegasaurus", 10, 10, 7);
+            Dinosaur velociraptor = new Dinosaur("Velociraptor", 10, 10, 6);
         }
-        //{
-        //    Dinosaur Tyrannosaurus = new Dinosaur("Tyrannosaurus", 10, 10, 10);
-        //    //Dinosaur stegasaurus = new Dinosaur("Stegasaurus", 10, 10, 7);
-        //    //Dinosaur velociraptor = new Dinosaur("Velociraptor", 10, 10, 6);
-        //}
+
 
         // member methods
         void ShowDinosaur()
         {
-            Console.WriteLine(dinoType + " " + dinoHealth + " " + dinoEnergy + " " + dinoAttackPower);
+            Console.WriteLine("These are the dinosaurs.");
         }
 
 

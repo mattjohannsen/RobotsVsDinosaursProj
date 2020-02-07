@@ -12,13 +12,17 @@ namespace Robots_vs_Dinosaurs
 
 
         //constructor
-
+        
 
         //methods
         public void StartBattle()
         {
             Console.WriteLine("The battle begins!");
             Console.ReadLine();
+        }
+        public void GetHerd()
+        {
+
         }
     }
 }

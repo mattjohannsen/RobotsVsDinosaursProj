@@ -12,7 +12,7 @@ namespace Robots_vs_Dinosaurs
         {
 
             Battlefield myBattlefield = new Battlefield();
-            myBattlefield StartBattle();
+            myBattlefield.StartBattle();
 
         }
     }

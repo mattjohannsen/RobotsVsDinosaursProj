@@ -13,7 +13,6 @@ namespace Robots_vs_Dinosaurs
         int robotHealth;
         int robotPowerLevel;
 
-
         // constructor SPAWNER
 
 
