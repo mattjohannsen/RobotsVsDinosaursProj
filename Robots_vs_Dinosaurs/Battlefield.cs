@@ -9,6 +9,7 @@ namespace Robots_vs_Dinosaurs
     class Battlefield
     {
         //member variables
+        Herd theHerd = new Herd();
 
 
         //constructor
@@ -19,6 +20,7 @@ namespace Robots_vs_Dinosaurs
         {
             Console.WriteLine("The battle begins!");
             Console.ReadLine();
+            theHerd.GetDinosaurs();
         }
         public void GetHerd()
         {

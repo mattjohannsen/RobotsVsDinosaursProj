@@ -17,9 +17,11 @@ namespace Robots_vs_Dinosaurs
         //constructor SPAWNER
         public Dinosaur(string dinoType, int dinoHealth, int dinoEnergy, int dinoAttackPower)
         {
-            Dinosaur tyrannosaurus = new Dinosaur("Tyrannosaurus", 10, 10, 10);
-            Dinosaur stegasaurus = new Dinosaur("Stegasaurus", 10, 10, 7);
-            Dinosaur velociraptor = new Dinosaur("Velociraptor", 10, 10, 6);
+            this.dinoType = dinoType;
+            this.dinoHealth = dinoHealth;
+            this.dinoEnergy = dinoEnergy;
+            this.dinoAttackPower = dinoAttackPower;
+
         }
 
 
