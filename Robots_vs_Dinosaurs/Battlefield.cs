@@ -10,6 +10,7 @@ namespace Robots_vs_Dinosaurs
     {
         //member variables
         Herd theHerd = new Herd();
+        Fleet theFleet = new Fleet();
 
 
         //constructor
@@ -18,9 +19,10 @@ namespace Robots_vs_Dinosaurs
         //methods
         public void StartBattle()
         {
-            Console.WriteLine("The battle begins!");
+            Console.WriteLine("Press ENTER to begin battle!");
             Console.ReadLine();
             theHerd.GetDinosaurs();
+            theFleet.GetRobots();
         }
         public void GetHerd()
         {
