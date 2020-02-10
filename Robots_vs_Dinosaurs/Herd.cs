@@ -31,9 +31,9 @@ namespace Robots_vs_Dinosaurs
         //}
         public Herd()
         {
-            Dinosaur dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 50);
-            Dinosaur dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 30);
-            Dinosaur dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 20);
+            Dinosaur dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 50, true);
+            Dinosaur dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 30, true);
+            Dinosaur dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 20, true);
 
             dinosaurs = new List<Dinosaur>() { dinosaur1, dinosaur2, dinosaur3 };
         }
@@ -45,9 +45,30 @@ namespace Robots_vs_Dinosaurs
             Console.WriteLine("These are the dinosaurs:");
             //Console.WriteLine(dinosaur1.dinoType);
             //Console.WriteLine($"D1: {dinosaurs[0].dinoType}");
-            Console.WriteLine($"D1: {dinosaurs[0].dinoType} Health:{dinosaurs[0].dinoHealth} Energy:{dinosaurs[0].dinoHealth} Attack Power:{dinosaurs[0].dinoAttackPower}");
-            Console.WriteLine($"D2: {dinosaurs[1].dinoType} Health:{dinosaurs[1].dinoHealth} Energy:{dinosaurs[1].dinoHealth} Attack Power:{dinosaurs[1].dinoAttackPower}");
-            Console.WriteLine($"D3: {dinosaurs[2].dinoType} Health:{dinosaurs[2].dinoHealth} Energy:{dinosaurs[2].dinoHealth} Attack Power:{dinosaurs[2].dinoAttackPower}");
+            if (dinosaurs[0].dinoHealth <=0 )
+            {
+                Console.WriteLine($"D1: {dinosaurs[0].dinoType} is dead.");
+            }
+            else
+            {
+                Console.WriteLine($"D1: {dinosaurs[0].dinoType} Health:{dinosaurs[0].dinoHealth} Energy:{dinosaurs[0].dinoHealth} Attack Power:{dinosaurs[0].dinoAttackPower}");
+            }
+            if (dinosaurs[1].dinoHealth <= 0)
+            {
+                Console.WriteLine($"D2: {dinosaurs[1].dinoType} is dead.");
+            }
+            else
+            {
+                Console.WriteLine($"D2: {dinosaurs[1].dinoType} Health:{dinosaurs[1].dinoHealth} Energy:{dinosaurs[1].dinoHealth} Attack Power:{dinosaurs[1].dinoAttackPower}");
+            }
+            if (dinosaurs[2].dinoHealth <= 0)
+            {
+                Console.WriteLine($"D3: {dinosaurs[2].dinoType} is dead.");
+            }
+            else
+            {
+                Console.WriteLine($"D3: {dinosaurs[2].dinoType} Health:{dinosaurs[2].dinoHealth} Energy:{dinosaurs[2].dinoHealth} Attack Power:{dinosaurs[2].dinoAttackPower}");
+            }
             //Console.WriteLine($"D2: {dinosaur2.dinoType} Health:{dinosaur2.dinoHealth} Energy:{dinosaur2.dinoHealth} Attack Power:{dinosaur2.dinoAttackPower}");
             //Console.WriteLine($"D3: {dinosaur3.dinoType} Health:{dinosaur3.dinoHealth} Energy:{dinosaur3.dinoHealth} Attack Power:{dinosaur3.dinoAttackPower}");
             //Console.WriteLine($"D1: {dinosaur1.dinoType} Health:{dinosaur1.dinoHealth} Energy:{dinosaur1.dinoHealth} Attack Power:{dinosaur1.dinoAttackPower}");

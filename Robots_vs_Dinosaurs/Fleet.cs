@@ -28,7 +28,7 @@ namespace Robots_vs_Dinosaurs
         public Fleet()
         {
             //Dinosaur dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 100);
-            Robot robot1 = new Robot("Knifebot", 100, 100, new Weapon("knife", 20));
+            Robot robot1 = new Robot("Knifebot", 100, 100, new Weapon("knife",100));
             Robot robot2 = new Robot("Sword-O-Matic", 100, 100, new Weapon("sword", 30));
             Robot robot3 = new Robot("Lasertron", 100, 100, new Weapon("laser" , 50));
 

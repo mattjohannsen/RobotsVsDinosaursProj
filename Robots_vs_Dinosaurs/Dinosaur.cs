@@ -13,14 +13,17 @@ namespace Robots_vs_Dinosaurs
         public int dinoHealth;
         public int  dinoEnergy;
         public int dinoAttackPower;
+        public bool isdinoAlive;
 
         //constructor SPAWNER
-        public Dinosaur(string dinoType, int dinoHealth, int dinoEnergy, int dinoAttackPower)
+        public Dinosaur(string dinoType, int dinoHealth, int dinoEnergy, int dinoAttackPower, bool dinoAlive)
         {
             this.dinoType = dinoType;
             this.dinoHealth = dinoHealth;
             this.dinoEnergy = dinoEnergy;
             this.dinoAttackPower = dinoAttackPower;
+            this.isdinoAlive = isdinoAlive;
+            //this.dinoAlive = dinoAlive;
 
         }
 
