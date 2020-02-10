@@ -77,56 +77,6 @@ namespace Robots_vs_Dinosaurs
                     break;
             }
             return attackerChoice;
-
-            //This is what a switchcase with a return of a Robot class looks like
-            //Robot attackerChoice;
-            //string attackerInput;
-            //Console.WriteLine("Please choose your attacker (R1, R2, R3, D1, D2, or D3).");
-            //attackerInput = Console.ReadLine();
-            //switch (attackerInput)
-            //{
-            //    case "R1":
-            //        attackerChoice = theFleet.robot1;
-            //        break;
-            //    case "R2":
-            //        attackerChoice = theFleet.robot2;
-            //        break;
-            //    case "R3":
-            //        attackerChoice = theFleet.robot3;
-            //        break;
-            //    default:
-            //        Console.WriteLine("This is not a valid selection.");
-            //        break;
-            //}
-            //return attackerChoice;
-
-            //    switch (attackerInput)
-            //    {
-            //        case "R1":
-            //            attackerChoice = theFleet.robot1;
-            //            break;
-            //        case "R2":
-            //            attackerChoice = theFleet.robot2;
-            //            break;
-            //        case "R3":
-            //            attackerChoice = theFleet.robot3;
-            //            break;
-            //        case "D1":
-            //            attackerChoice = theHerd.dinosaur1;
-            //            break;
-            //        case "D2":
-            //            attackerChoice = theHerd.dinosaur2;
-            //            break;
-            //        case "D3":
-            //            attackerChoice = theHerd.dinosaur3;
-            //            break;
-            //        default:
-            //            Console.WriteLine("This is not a valid selection.");
-            //            break;
-            //    }
-            //    return attackerChoice;
-            //}
-
         }
         public string ChooseTarget()
         {
