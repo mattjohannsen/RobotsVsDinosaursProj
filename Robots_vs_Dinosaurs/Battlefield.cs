@@ -12,6 +12,8 @@ namespace Robots_vs_Dinosaurs
         Herd theHerd;
         Fleet theFleet;
         public bool isAttackerRobot =  true;
+        string attackerVariable;
+        string targetVariable;
 
 
         //constructor
@@ -28,55 +30,110 @@ namespace Robots_vs_Dinosaurs
             Console.ReadLine();
             theHerd.GetDinosaurs();
             theFleet.GetRobots();
-            string chosenAttacker;
-            string chosenTarget;
+            //string chosenAttacker;
+            //string chosenTarget;
             //chosenAttacker = ChooseAttacker();
             //Console.WriteLine(chosenAttacker);
             //chosenAttacker = Console.WriteLine(ChooseAttacker());
             //chosenTarget = Console.WriteLine(ChooseTarget());
-            Console.WriteLine(isAttackerRobot);
+            //Console.WriteLine(isAttackerRobot);
             Console.WriteLine(ChooseAttacker());
-            Console.WriteLine(isAttackerRobot);
+            //Console.WriteLine(isAttackerRobot);
             Console.WriteLine(ChooseTarget());
+            if (isAttackerRobot == true)
+            {
+                robotAttack();
+            }
+            else if (isAttackerRobot == false)
+            {
+                dinoAttack();
+            }
+            else
+            {
+
+            }
             //Console.WriteLine($"{chosenAttacker} vs {chosenTarget}");
             Console.ReadLine();
         }
+        public void robotAttack()
+        {
+            Console.WriteLine($"{theFleet.robots[0].robotName}  attacks {theHerd.dinosaurs[0].dinoType}");
+
+            Console.WriteLine($"{theFleet.robots[0].robotName} Attack Power: {theFleet.robots[0].robotWeapon.weaponAttackPower}");
+            Console.WriteLine($"{theHerd.dinosaurs[0].dinoType} Attack Power: {theHerd.dinosaurs[0].dinoAttackPower}");
+            if (theFleet.robots[0].robotWeapon.weaponAttackPower < theHerd.dinosaurs[0].dinoAttackPower)
+            {
+                Console.WriteLine($"{theFleet.robots[0].robotName} loses!");
+                theFleet.robots[0].robotHealth = (theFleet.robots[0].robotHealth - theHerd.dinosaurs[0].dinoAttackPower);
+
+                }
+            Console.WriteLine($"{theFleet.robots[0].robotHealth}");
+
+            //if (attackerVariable.ToString == "robot1" || "robot2" || "robot3")
+            //{
+            //    Console.WriteLine("test");
+            //    //Console.WriteLine($"R1: {robots[0].robotName} Health:{robots[0].robotHealth} Energy:{robots[0].robotPowerLevel} Weapon: {robots[0].robotWeapon.weaponName} Attack Power: {robots[0].robotWeapon.weaponAttackPower}");
+            //}
+            //else
+            //{
+
+            //}
+        }
+        public void dinoAttack()
+        {
+            Console.WriteLine("Dinosaur Attack");
+            Console.WriteLine(attackerVariable + " vs. " + targetVariable);
+
+            Console.WriteLine($"{theFleet.robots[0].robotName} Attack Power: {theFleet.robots[0].robotWeapon.weaponAttackPower}");
+            Console.WriteLine($"{theHerd.dinosaurs[0].dinoType} Attack Power: {theHerd.dinosaurs[0].dinoAttackPower}");
+
+            //if (attackerVariable.ToString == "robot1" || "robot2" || "robot3")
+            //{
+            //    Console.WriteLine("test");
+            //    //Console.WriteLine($"R1: {robots[0].robotName} Health:{robots[0].robotHealth} Energy:{robots[0].robotPowerLevel} Weapon: {robots[0].robotWeapon.weaponName} Attack Power: {robots[0].robotWeapon.weaponAttackPower}");
+            //}
+            //else
+            //{
+
+            //}
+        }
+
         public string ChooseAttacker()
         {
-            string attackerChoice;
+            //string attackerChoice;
             Console.WriteLine("Please choose your attacker (R1, R2, R3, D1, D2, or D3).");
-            attackerChoice = Console.ReadLine();
-            switch (attackerChoice)
+            attackerVariable = Console.ReadLine();
+            switch (attackerVariable)
             {
                 case "R1":
-                    attackerChoice = "robot1";
+                    attackerVariable = "robot1";
                     isAttackerRobot = true;
                     break;
                 case "R2":
-                    attackerChoice = "robot2";
+                    attackerVariable = "robot2";
                     isAttackerRobot = true;
                     break;
                 case "R3":
-                    attackerChoice = "robot3";
+                    attackerVariable = "robot3";
                     isAttackerRobot = true;
                     break;
                 case "D1":
-                    attackerChoice = "dinosaur1";
+                    attackerVariable = "dinosaur1";
                     isAttackerRobot = false;
                     break;
                 case "D2":
-                    attackerChoice = "dinosaur2";
+                    attackerVariable = "dinosaur2";
                     isAttackerRobot = false;
                     break;
                 case "D3":
-                    attackerChoice = "dinosaur3";
+                    attackerVariable = "dinosaur3";
                     isAttackerRobot = false;
                     break;
                 default:
                     Console.WriteLine("This is not a valid selection.");
                     break;
             }
-            return attackerChoice;
+            return attackerVariable;
         }
         public string ChooseTarget()
         {
@@ -86,44 +143,44 @@ namespace Robots_vs_Dinosaurs
                 {
                     Console.WriteLine("Please choose your target (D1, D2, or D3).");
                 }
-                targetChoice = Console.ReadLine();
-                switch (targetChoice)
+                targetVariable = Console.ReadLine();
+                switch (targetVariable)
                 {
                     case "D1":
-                        targetChoice = "dinosaur1";
+                        targetVariable = "dinosaur1";
                         break;
                     case "D2":
-                        targetChoice = "dinosaur2";
+                        targetVariable = "dinosaur2";
                         break;
                     case "D3":
-                        targetChoice = "dinosaur3";
+                        targetVariable = "dinosaur3";
                         break;
                     default:
                         Console.WriteLine("This is not a valid selection.");
                         break;
                 }
-                return targetChoice;
+                return targetVariable;
             }
             else if (isAttackerRobot == false)
             {
                 Console.WriteLine("Please choose your target (R1, R2, R3).");
-                targetChoice = Console.ReadLine();
-                switch (targetChoice)
+                targetVariable = Console.ReadLine();
+                switch (targetVariable)
                 {
                     case "R1":
-                        targetChoice = "robot1";
+                        targetVariable = "robot1";
                         break;
                     case "R2":
-                        targetChoice = "robot2";
+                        targetVariable = "robot2";
                         break;
                     case "R3":
-                        targetChoice = "robot3";
+                        targetVariable = "robot3";
                         break;
                     default:
                         Console.WriteLine("This is not a valid selection.");
                         break;
                 }
-                return targetChoice;
+                return targetVariable;
             }
             else
             {
