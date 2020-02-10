@@ -9,8 +9,8 @@ namespace Robots_vs_Dinosaurs
     public class Weapon
     {
         // member variables
-        string weaponName;
-        int weaponAttackPower;
+        public string weaponName;
+        public int weaponAttackPower;
 
         // constructor SPAWNER
         public Weapon(string weaponName, int weaponAttackPower)

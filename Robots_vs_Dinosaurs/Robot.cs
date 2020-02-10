@@ -12,21 +12,24 @@ namespace Robots_vs_Dinosaurs
         public string robotName;
         public int robotHealth;
         public int robotPowerLevel;
-        public int robotWeapon;
+        public Weapon robotWeapon;
 
         // constructor SPAWNER
-        public Robot(string robotName, int robotHealth, int robotPowerLevel, int robotWeapon)
+        public Robot(string robotName, int robotHealth, int robotPowerLevel, Weapon weaponName)
         {
             this.robotName = robotName;
             this.robotHealth = robotHealth;
             this.robotPowerLevel = robotPowerLevel;
-            this.robotWeapon = robotWeapon;
+            this.robotWeapon = weaponName;
 
         }
-        Weapon weapon1 = new Weapon("Buzz Saw", 30);
-        Weapon weapon2 = new Weapon("Electroshock Probe", 5);
-        Weapon weapon3 = new Weapon("Laser", 10);
+
 
         // member methods
+
+        public void GetWeaponType(string robotName)
+        {
+            //If robotWeapon = weaponName then robot inherits the weaponAttackPower of that weapon
+        }
     }
 }
