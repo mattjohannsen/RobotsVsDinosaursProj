@@ -9,9 +9,13 @@ namespace Robots_vs_Dinosaurs
     public class Herd
     {
         // member variables
-        Dinosaur dinosaur1;
-        Dinosaur dinosaur2;
-        Dinosaur dinosaur3;
+        public Dinosaur dinosaur1;
+        public Dinosaur dinosaur2;
+        public Dinosaur dinosaur3;
+        // Declare the List
+        // Instantiate the List in the constructor
+        // Add dinosaur data type to the existing dinosaurs in the constructor
+        // Add the dinosaurs to the List
 
 
         // constructor
@@ -33,7 +37,7 @@ namespace Robots_vs_Dinosaurs
             Console.WriteLine($"D3: {dinosaur3.dinoType} Health:{dinosaur3.dinoHealth} Energy:{dinosaur3.dinoHealth} Attack Power:{dinosaur3.dinoAttackPower}");
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
 

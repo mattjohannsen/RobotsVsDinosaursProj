@@ -9,12 +9,12 @@ namespace Robots_vs_Dinosaurs
     class Fleet
     {
         // member variables
-        Weapon weapon2;
-        Weapon weapon3;
+        public Weapon weapon2;
+        public Weapon weapon3;
 
-        Robot robot1;
-        Robot robot2;
-        Robot robot3;
+        public Robot robot1;
+        public Robot robot2;
+        public Robot robot3;
 
         // constructor
         public Fleet()
@@ -38,7 +38,7 @@ namespace Robots_vs_Dinosaurs
             //Console.WriteLine($"R3: {robot3.robotName} Health:{robot3.robotHealth} Energy:{robot3.robotPowerLevel} Weapon:{robot3.robotWeapon}");
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
     }
