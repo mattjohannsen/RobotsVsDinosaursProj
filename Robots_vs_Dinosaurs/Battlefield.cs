@@ -9,12 +9,16 @@ namespace Robots_vs_Dinosaurs
     class Battlefield
     {
         //member variables
-        Herd theHerd = new Herd();
-        Fleet theFleet = new Fleet();
+        Herd theHerd;
+        Fleet theFleet;
 
 
         //constructor
-        
+        public Battlefield()
+        {
+            theHerd = new Herd();
+            theFleet = new Fleet();
+        }
 
         //methods
         public void StartBattle()

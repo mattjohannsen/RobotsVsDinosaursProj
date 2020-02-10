@@ -9,13 +9,6 @@ namespace Robots_vs_Dinosaurs
     class Fleet
     {
         // member variables
-
-
-
-
-        // constructor
-
-      
         Weapon weapon2;
         Weapon weapon3;
 
@@ -23,8 +16,7 @@ namespace Robots_vs_Dinosaurs
         Robot robot2;
         Robot robot3;
 
-
-
+        // constructor
         public Fleet()
         {
             robot1 = new Robot("Knifebot", 100, 100, new Weapon("knife", 5));

@@ -9,13 +9,18 @@ namespace Robots_vs_Dinosaurs
     public class Herd
     {
         // member variables
-
+        Dinosaur dinosaur1;
+        Dinosaur dinosaur2;
+        Dinosaur dinosaur3;
 
 
         // constructor
-        Dinosaur dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 100);
-        Dinosaur dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 70);
-        Dinosaur dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 60);
+        public Herd()
+        {
+            dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 100);
+            dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 70);
+            dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 60);
+        }
 
 
         // member methods
