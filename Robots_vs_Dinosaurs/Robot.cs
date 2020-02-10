@@ -13,6 +13,7 @@ namespace Robots_vs_Dinosaurs
         public int robotHealth;
         public int robotPowerLevel;
         public Weapon robotWeapon;
+        public bool isRobotAlive;
 
         // constructor SPAWNER
         public Robot(string robotName, int robotHealth, int robotPowerLevel, Weapon weaponName)
@@ -21,6 +22,7 @@ namespace Robots_vs_Dinosaurs
             this.robotHealth = robotHealth;
             this.robotPowerLevel = robotPowerLevel;
             this.robotWeapon = weaponName;
+            this.isRobotAlive = isRobotAlive;
 
         }
 

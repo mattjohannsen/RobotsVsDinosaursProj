@@ -14,6 +14,8 @@ namespace Robots_vs_Dinosaurs
         public bool isAttackerRobot =  true;
         string attackerVariable;
         string targetVariable;
+        public bool continueGame;
+
 
 
         //constructor
@@ -26,36 +28,36 @@ namespace Robots_vs_Dinosaurs
         //methods
         public void StartBattle()
         {
-            Console.WriteLine("Press ENTER to begin battle!");
-            Console.ReadLine();
-            theHerd.GetDinosaurs();
-            theFleet.GetRobots();
-            //string chosenAttacker;
-            //string chosenTarget;
-            //chosenAttacker = ChooseAttacker();
-            //Console.WriteLine(chosenAttacker);
-            //chosenAttacker = Console.WriteLine(ChooseAttacker());
-            //chosenTarget = Console.WriteLine(ChooseTarget());
-            //Console.WriteLine(isAttackerRobot);
-            Console.WriteLine(ChooseAttacker());
-            //Console.WriteLine(isAttackerRobot);
-            Console.WriteLine(ChooseTarget());
-            if (isAttackerRobot == true)
+            //Console.WriteLine("Press ENTER to begin battle!");
+            //Console.ReadLine();
+            continueGame = true;
+
+            do
             {
-                robotAttack(attackerVariable, targetVariable);
-            }
-            else if (isAttackerRobot == false)
-            {
-                dinoAttack();
-            }
-            else
-            {
+                theHerd.GetDinosaurs();
+                theFleet.GetRobots();
+                Console.WriteLine(ChooseAttacker());
+                Console.WriteLine(ChooseTarget());
+                if (isAttackerRobot == true)
+                {
+                    RobotAttack(attackerVariable, targetVariable);
+                }
+                else if (isAttackerRobot == false)
+                {
+                    DinoAttack(attackerVariable, targetVariable);
+                }
+                else
+                {
+
+                }
 
             }
+            while (continueGame == true);
+ 
             //Console.WriteLine($"{chosenAttacker} vs {chosenTarget}");
             Console.ReadLine();
         }
-        public void robotAttack(string attackerVariable, string targetVariable)
+        public void RobotAttack(string attackerVariable, string targetVariable)
         {
             //Start of the attacker Index Code
             int attackerIndex;
@@ -94,37 +96,110 @@ namespace Robots_vs_Dinosaurs
             Console.WriteLine($"{theFleet.robots[attackerIndex].robotName}  attacks {theHerd.dinosaurs[targetIndex].dinoType}");
             Console.WriteLine($"{theFleet.robots[attackerIndex].robotName} Attack Power: {theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower}");
             Console.WriteLine($"{theHerd.dinosaurs[targetIndex].dinoType} Attack Power: {theHerd.dinosaurs[targetIndex].dinoAttackPower}");
+            // Robot fights Dinosaur and loses. robotHealth is decreased by dinoAttackPower
             if (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower < theHerd.dinosaurs[targetIndex].dinoAttackPower)
                 {
                 Console.WriteLine($"{theFleet.robots[attackerIndex].robotName} loses!");
-                theFleet.robots[0].robotHealth = (theFleet.robots[attackerIndex].robotHealth - theHerd.dinosaurs[targetIndex].dinoAttackPower);
+                theFleet.robots[targetIndex].robotHealth = (theFleet.robots[attackerIndex].robotHealth - theHerd.dinosaurs[targetIndex].dinoAttackPower);
+                Console.WriteLine($"{theFleet.robots[targetIndex].robotHealth}");
                 }
+            // Robot fights Dinosaur and wins.  dinoHealth is decreased by weaponAttackPower
             else if (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower > theHerd.dinosaurs[targetIndex].dinoAttackPower)
             {
                 Console.WriteLine($"{theFleet.robots[attackerIndex].robotName} wins!");
                 Console.WriteLine( $"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
                 Console.WriteLine($"{theHerd.dinosaurs[targetIndex].dinoHealth} - {theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower}");
                 
-                theHerd.dinosaurs[0].dinoHealth = (theHerd.dinosaurs[targetIndex].dinoHealth) - (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower);
-                Console.WriteLine($"{theHerd.dinosaurs[targetIndex].dinoHealth}");
+                theHerd.dinosaurs[targetIndex].dinoHealth = (theHerd.dinosaurs[targetIndex].dinoHealth) - (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower);
+                Console.WriteLine($"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
+                if (theHerd.dinosaurs[targetIndex].dinoHealth <= 0)
+                {
+                    theHerd.dinosaurs[targetIndex].isdinoAlive = false;
+                }
             }
             else
             {
                 Console.WriteLine("Tie!");
             }
-            Console.WriteLine($"{theFleet.robots[attackerIndex].robotHealth}");
+           //Console.WriteLine($"{theFleet.robots[attackerIndex].robotHealth}");
         }
-        public void dinoAttack()
+        //public void DinoAttack()
+        //{
+        //    //This is the old dinoAttack method code
+
+
+        //    //Console.WriteLine("Dinosaur Attack");
+        //    //Console.WriteLine(attackerVariable + " vs. " + targetVariable);
+
+        //    //Console.WriteLine($"{theFleet.robots[0].robotName} Attack Power: {theFleet.robots[0].robotWeapon.weaponAttackPower}");
+        //    //Console.WriteLine($"{theHerd.dinosaurs[0].dinoType} Attack Power: {theHerd.dinosaurs[0].dinoAttackPower}");
+
+        //}
+        public void DinoAttack(string attackerVariable, string targetVariable)
         {
-            //This is the old dinoAttack method code
+            //Start of the attacker Index Code
+            int attackerIndex;
+            attackerIndex = 0;
 
+            if (attackerVariable == "dinosaur1")
+            {
+                attackerIndex = 0;
+            }
+            if (attackerVariable == "dinosaur2")
+            {
+                attackerIndex = 1;
+            }
+            if (attackerVariable == "dinosaur3")
+            {
+                attackerIndex = 2;
+            }
 
-            //Console.WriteLine("Dinosaur Attack");
-            //Console.WriteLine(attackerVariable + " vs. " + targetVariable);
+            //Start of the target Index Code
+            int targetIndex;
+            targetIndex = 0;
 
-            //Console.WriteLine($"{theFleet.robots[0].robotName} Attack Power: {theFleet.robots[0].robotWeapon.weaponAttackPower}");
-            //Console.WriteLine($"{theHerd.dinosaurs[0].dinoType} Attack Power: {theHerd.dinosaurs[0].dinoAttackPower}");
+            if (targetVariable == "robot1")
+            {
+                targetIndex = 0;
+            }
+            if (targetVariable == "robot2")
+            {
+                targetIndex = 1;
+            }
+            if (targetVariable == "robot3")
+            {
+                targetIndex = 2;
+            }
+            Console.WriteLine($"{attackerVariable} vs {targetVariable}");
+            Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoType} attacks {theFleet.robots[targetIndex].robotName}");
+            Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoType} Attack Power: {theHerd.dinosaurs[attackerIndex].dinoAttackPower}");
+            Console.WriteLine($"{theFleet.robots[targetIndex].robotName} Attack Power: {theFleet.robots[targetIndex].robotWeapon.weaponAttackPower}");
+            // Dinosaur fights Robot and loses. dinsosaur Health is decreased by weaponAttackPower
+            if (theHerd.dinosaurs[attackerIndex].dinoAttackPower  < theFleet.robots[targetIndex].robotWeapon.weaponAttackPower)
+            {
+                Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoType}  loses!");
+                theHerd.dinosaurs[attackerIndex].dinoHealth = (theHerd.dinosaurs[attackerIndex].dinoHealth - theFleet.robots[targetIndex].robotWeapon.weaponAttackPower);
+                Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoHealth}");
+            }
+            // Dinosaur fights Robot and wins.  Robot Health is decreased by dinoAttackPower
+            else if (theHerd.dinosaurs[attackerIndex].dinoAttackPower > theFleet.robots[targetIndex].robotWeapon.weaponAttackPower)
+            {
+                Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoType}  wins!");
+                Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
+                Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoHealth} - {theFleet.robots[targetIndex].robotWeapon.weaponAttackPower}");
 
+                theFleet.robots[targetIndex].robotHealth = theFleet.robots[targetIndex].robotHealth - (theHerd.dinosaurs[attackerIndex].dinoAttackPower);
+                Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
+                if (theFleet.robots[targetIndex].robotHealth <= 0)
+                {
+                    theFleet.robots[targetIndex].isRobotAlive = false;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Tie!");
+            }
+            //Console.WriteLine($"{theFleet.robots[attackerIndex].robotHealth}");
         }
 
         public string ChooseAttacker()

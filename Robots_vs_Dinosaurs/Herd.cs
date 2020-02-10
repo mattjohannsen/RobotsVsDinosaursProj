@@ -45,9 +45,16 @@ namespace Robots_vs_Dinosaurs
             Console.WriteLine("These are the dinosaurs:");
             //Console.WriteLine(dinosaur1.dinoType);
             //Console.WriteLine($"D1: {dinosaurs[0].dinoType}");
+            Console.WriteLine($"{dinosaurs[0].isdinoAlive}|{dinosaurs[1].isdinoAlive}|{dinosaurs[2].isdinoAlive}");
+            if ((dinosaurs[0].isdinoAlive = false) && (dinosaurs[1].isdinoAlive = false) && (dinosaurs[2].isdinoAlive= false))
+            {
+                //continueGame = false;
+                Console.WriteLine("Gameover, Robots win!");
+            }
             if (dinosaurs[0].dinoHealth <=0 )
             {
                 Console.WriteLine($"D1: {dinosaurs[0].dinoType} is dead.");
+                dinosaurs[0].isdinoAlive = false;
             }
             else
             {
@@ -56,6 +63,7 @@ namespace Robots_vs_Dinosaurs
             if (dinosaurs[1].dinoHealth <= 0)
             {
                 Console.WriteLine($"D2: {dinosaurs[1].dinoType} is dead.");
+                dinosaurs[1].isdinoAlive = false;
             }
             else
             {
@@ -64,6 +72,7 @@ namespace Robots_vs_Dinosaurs
             if (dinosaurs[2].dinoHealth <= 0)
             {
                 Console.WriteLine($"D3: {dinosaurs[2].dinoType} is dead.");
+                dinosaurs[2].isdinoAlive = false;
             }
             else
             {
