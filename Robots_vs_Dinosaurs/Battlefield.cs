@@ -41,10 +41,12 @@ namespace Robots_vs_Dinosaurs
                 if (isAttackerRobot == true)
                 {
                     RobotAttack(attackerVariable, targetVariable);
+                    continueGame = IsGameOver(continueGame);
                 }
                 else if (isAttackerRobot == false)
                 {
                     DinoAttack(attackerVariable, targetVariable);
+                    continueGame = IsGameOver(continueGame);
                 }
                 else
                 {
@@ -57,6 +59,45 @@ namespace Robots_vs_Dinosaurs
             //Console.WriteLine($"{chosenAttacker} vs {chosenTarget}");
             Console.ReadLine();
         }
+
+        public bool IsGameOver(bool continueGame)
+        {
+            //Console.WriteLine($"Continue GAme: {continueGame}");
+            if ((theHerd.dinosaurs[0].dinoHealth <= 0))
+            //if ((theHerd.dinosaurs[0].dinoHealth <= 0) && (theHerd.dinosaurs[0].dinoHealth <= 0) && (theHerd.dinosaurs[0].dinoHealth <= 0))
+            {
+                //Console.WriteLine($"D1 is dead. Continue game : {continueGame}");
+                if ((theHerd.dinosaurs[1].dinoHealth <= 0))
+                {
+                    //Console.WriteLine($"D2 is dead. Continue game : {continueGame}");
+                    if ((theHerd.dinosaurs[2].dinoHealth <= 0))
+                    {
+                        continueGame = false;
+                        Console.WriteLine($"All dinosaurs are dead. GAME OVER: {continueGame}");
+                    }
+                }
+            }
+            if ((theFleet.robots[0].robotHealth <= 0))
+            //if ((theHerd.dinosaurs[0].dinoHealth <= 0) && (theHerd.dinosaurs[0].dinoHealth <= 0) && (theHerd.dinosaurs[0].dinoHealth <= 0))
+            {
+                //Console.WriteLine($"D1 is dead. Continue game : {continueGame}");
+                if ((theFleet.robots[1].robotHealth <= 0))
+                {
+                    //Console.WriteLine($"D2 is dead. Continue game : {continueGame}");
+                    if ((theFleet.robots[2].robotHealth <= 0))
+                    {
+                        continueGame = false;
+                        Console.WriteLine($"All robots are dead. GAME OVER: {continueGame}");
+                    }
+                }
+            }
+            return continueGame;
+            //if ((theFleet.robots[0].robotHealth <= 0) && (theFleet.robots[1].robotHealth <= 0) && (theFleet.robots[2].robotHealth<= 0))
+            //{
+            //    continueGame = false;
+            //}
+        }
+
         public void RobotAttack(string attackerVariable, string targetVariable)
         {
             //Start of the attacker Index Code
@@ -100,8 +141,8 @@ namespace Robots_vs_Dinosaurs
             if (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower < theHerd.dinosaurs[targetIndex].dinoAttackPower)
                 {
                 Console.WriteLine($"{theFleet.robots[attackerIndex].robotName} loses!");
-                theFleet.robots[targetIndex].robotHealth = (theFleet.robots[attackerIndex].robotHealth - theHerd.dinosaurs[targetIndex].dinoAttackPower);
-                Console.WriteLine($"{theFleet.robots[targetIndex].robotHealth}");
+                theFleet.robots[attackerIndex].robotHealth = (theFleet.robots[attackerIndex].robotHealth - theHerd.dinosaurs[targetIndex].dinoAttackPower);
+                Console.WriteLine($"{theFleet.robots[attackerIndex].robotHealth}");
                 }
             // Robot fights Dinosaur and wins.  dinoHealth is decreased by weaponAttackPower
             else if (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower > theHerd.dinosaurs[targetIndex].dinoAttackPower)
@@ -239,6 +280,7 @@ namespace Robots_vs_Dinosaurs
             }
             return attackerVariable;
         }
+
         public string ChooseTarget()
         {
             string targetChoice;

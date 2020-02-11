@@ -45,7 +45,7 @@ namespace Robots_vs_Dinosaurs
             Console.WriteLine("These are the dinosaurs:");
             //Console.WriteLine(dinosaur1.dinoType);
             //Console.WriteLine($"D1: {dinosaurs[0].dinoType}");
-            Console.WriteLine($"{dinosaurs[0].isdinoAlive}|{dinosaurs[1].isdinoAlive}|{dinosaurs[2].isdinoAlive}");
+            //Console.WriteLine($"{dinosaurs[0].isdinoAlive}|{dinosaurs[1].isdinoAlive}|{dinosaurs[2].isdinoAlive}");
             if ((dinosaurs[0].isdinoAlive = false) && (dinosaurs[1].isdinoAlive = false) && (dinosaurs[2].isdinoAlive= false))
             {
                 //continueGame = false;
