@@ -32,8 +32,8 @@ namespace Robots_vs_Dinosaurs
         public Herd()
         {
             Dinosaur dinosaur1 = new Dinosaur("Tyrannosaurus", 100, 100, 50, true);
-            Dinosaur dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 30, true);
-            Dinosaur dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 20, true);
+            Dinosaur dinosaur2 = new Dinosaur("Stegasaurus", 100, 100, 50, true);
+            Dinosaur dinosaur3 = new Dinosaur("Velociraptor", 100, 100, 40, true);
 
             dinosaurs = new List<Dinosaur>() { dinosaur1, dinosaur2, dinosaur3 };
         }

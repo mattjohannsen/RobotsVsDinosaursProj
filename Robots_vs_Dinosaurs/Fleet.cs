@@ -39,9 +39,32 @@ namespace Robots_vs_Dinosaurs
         public void GetRobots()
         {
             Console.WriteLine("These are the robots:");
-            Console.WriteLine($"R1: {robots[0].robotName} Health:{robots[0].robotHealth} Energy:{robots[0].robotPowerLevel} Weapon: {robots[0].robotWeapon.weaponName} Attack Power: {robots[0].robotWeapon.weaponAttackPower}");
-            Console.WriteLine($"R2: {robots[1].robotName} Health:{robots[1].robotHealth} Energy:{robots[1].robotPowerLevel} Weapon: {robots[1].robotWeapon.weaponName} Attack Power: {robots[1].robotWeapon.weaponAttackPower}");
-            Console.WriteLine($"R3: {robots[2].robotName} Health:{robots[2].robotHealth} Energy:{robots[2].robotPowerLevel} Weapon: {robots[2].robotWeapon.weaponName} Attack Power: {robots[2].robotWeapon.weaponAttackPower}");
+            if (robots[0].robotHealth <= 0)
+            {
+                Console.WriteLine($"R1: {robots[0].robotName} is dead.");
+                //robots[0].isRobotAlive = false;
+            }
+            else
+            {
+                Console.WriteLine($"R1: {robots[0].robotName} Health:{robots[0].robotHealth} Energy:{robots[0].robotPowerLevel} Weapon: {robots[0].robotWeapon.weaponName} Attack Power: {robots[0].robotWeapon.weaponAttackPower}");
+            }
+            if (robots[1].robotHealth <= 0)
+            {
+                Console.WriteLine($"R2: {robots[1].robotName} is dead.");
+            }
+            else
+            {
+                Console.WriteLine($"R2: {robots[1].robotName} Health:{robots[1].robotHealth} Energy:{robots[1].robotPowerLevel} Weapon: {robots[1].robotWeapon.weaponName} Attack Power: {robots[1].robotWeapon.weaponAttackPower}");
+            }
+            if (robots[2].robotHealth <= 0)
+            {
+                Console.WriteLine($"R3: {robots[2].robotName} is dead.");
+            }
+            else
+            {
+                Console.WriteLine($"R3: {robots[2].robotName} Health:{robots[2].robotHealth} Energy:{robots[2].robotPowerLevel} Weapon: {robots[2].robotWeapon.weaponName} Attack Power: {robots[2].robotWeapon.weaponAttackPower}");
+            }
+
 
         }
 

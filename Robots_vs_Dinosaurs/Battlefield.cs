@@ -73,7 +73,8 @@ namespace Robots_vs_Dinosaurs
                     if ((theHerd.dinosaurs[2].dinoHealth <= 0))
                     {
                         continueGame = false;
-                        Console.WriteLine($"All dinosaurs are dead. GAME OVER: {continueGame}");
+                        //Console.WriteLine($"All dinosaurs are dead. GAME OVER: {continueGame}");
+                        Console.WriteLine($"All dinosaurs are dead. GAME OVER");
                     }
                 }
             }
@@ -87,7 +88,8 @@ namespace Robots_vs_Dinosaurs
                     if ((theFleet.robots[2].robotHealth <= 0))
                     {
                         continueGame = false;
-                        Console.WriteLine($"All robots are dead. GAME OVER: {continueGame}");
+                        Console.WriteLine($"All robots are dead. GAME OVER");
+                        //Console.WriteLine($"All robots are dead. GAME OVER: {continueGame}");
                     }
                 }
             }
@@ -148,11 +150,11 @@ namespace Robots_vs_Dinosaurs
             else if (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower > theHerd.dinosaurs[targetIndex].dinoAttackPower)
             {
                 Console.WriteLine($"{theFleet.robots[attackerIndex].robotName} wins!");
-                Console.WriteLine( $"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
-                Console.WriteLine($"{theHerd.dinosaurs[targetIndex].dinoHealth} - {theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower}");
+                //Console.WriteLine( $"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
+                //Console.WriteLine($"{theHerd.dinosaurs[targetIndex].dinoHealth} - {theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower}");
                 
                 theHerd.dinosaurs[targetIndex].dinoHealth = (theHerd.dinosaurs[targetIndex].dinoHealth) - (theFleet.robots[attackerIndex].robotWeapon.weaponAttackPower);
-                Console.WriteLine($"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
+                //Console.WriteLine($"|{theHerd.dinosaurs[targetIndex].dinoHealth}|");
                 if (theHerd.dinosaurs[targetIndex].dinoHealth <= 0)
                 {
                     theHerd.dinosaurs[targetIndex].isdinoAlive = false;
@@ -226,11 +228,11 @@ namespace Robots_vs_Dinosaurs
             else if (theHerd.dinosaurs[attackerIndex].dinoAttackPower > theFleet.robots[targetIndex].robotWeapon.weaponAttackPower)
             {
                 Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoType}  wins!");
-                Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
-                Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoHealth} - {theFleet.robots[targetIndex].robotWeapon.weaponAttackPower}");
+                //Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
+                //Console.WriteLine($"{theHerd.dinosaurs[attackerIndex].dinoHealth} - {theFleet.robots[targetIndex].robotWeapon.weaponAttackPower}");
 
                 theFleet.robots[targetIndex].robotHealth = theFleet.robots[targetIndex].robotHealth - (theHerd.dinosaurs[attackerIndex].dinoAttackPower);
-                Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
+                //Console.WriteLine($"|{theHerd.dinosaurs[attackerIndex].dinoHealth}|");
                 if (theFleet.robots[targetIndex].robotHealth <= 0)
                 {
                     theFleet.robots[targetIndex].isRobotAlive = false;
